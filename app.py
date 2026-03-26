@@ -3,6 +3,8 @@ from dash import html
 import dash_bootstrap_components as dbc
 from pages import page1_cb
 from pages import page2_cb
+from pages import page3_cb
+
 
 app = dash.Dash(
     __name__,
@@ -12,6 +14,7 @@ app = dash.Dash(
 
 page1_cb.register_callbacks(app)
 page2_cb.register_callbacks(app)
+page3_cb.register_callbacks(app)
 
 server = app.server
 
