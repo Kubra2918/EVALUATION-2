@@ -6,6 +6,17 @@ dash.register_page(__name__, path="/page2", name="Page 2")
 
 df = pd.read_csv("datas/avocado.csv")
 
+df = df.drop(columns=[
+    "Unnamed: 0",
+    "4046",
+    "4225",
+    "4770",
+    "Small Bags",
+    "Large Bags",
+    "XLarge Bags"
+])
+
+
 regions = df["region"].unique()
 types = df["type"].unique()
 
@@ -22,6 +33,8 @@ layout = html.Div([
          options=[{"label": t, "value": t} for t in types],
          placeholder= "Choisir un type"
     ),
+
+    html.Div(id="row-count"),
 
     dash_table.DataTable(
        id="table",

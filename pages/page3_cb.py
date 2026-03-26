@@ -16,8 +16,8 @@ def register_callbacks(app):
     )
     def render_markdown(tab):
         if tab == "tab-1":
-            return dcc.Markdown(md1)
+            return dcc.Markdown(md1, style={"padding": "20px", "color":"white", "backgroundColor": "#1e1e1e"})
         elif tab == "tab-2":
-            return dcc.Markdown(md2)
+            return dcc.Markdown(md2, style={"padding": "20px", "color":"white", "backgroundColor": "#1e1e1e"})
         else:
-            return dcc.Markdown(md3)
+            return dcc.Markdown(md3, style={"padding": "20px", "color":"white", "backgroundColor": "#1e1e1e"})

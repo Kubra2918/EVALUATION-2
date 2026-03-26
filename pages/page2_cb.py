@@ -7,6 +7,7 @@ def register_callbacks(app):
 
     @app.callback(
         Output("table", "data"),
+        Output("row-count", "children"),
         Input("region-filter", "value"),
         Input("type-filter", "value")
     )
@@ -20,4 +21,7 @@ def register_callbacks(app):
         if selected_type:
             filtered_df = filtered_df[filtered_df["type"] == selected_type]
 
-        return filtered_df.to_dict("records")
+        return (
+            filtered_df.to_dict("records"),
+            f"Nombre de lignes : {len(filtered_df)}"
+        )

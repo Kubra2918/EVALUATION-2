@@ -1,0 +1,39 @@
+body {
+    background-image: url("BG.jpg");
+    background-size: cover;
+}
+
+
+.container-fluid {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+}
+
+.card {
+    background-color: #1e1e1e;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+
+h1, h2 {
+    color: white;
+}
+
+
+.dash-tabs {
+    background-color: #1e1e1e;
+    border-radius: 10px;
+}
+
+.dash-tab {
+    background-color: #1e1e1e !important;
+    color: white !important;
+    border: none !important;
+}
+
+.dash-tab--selected {
+    background-color: #3b8dbd !important;
+    color: white !important;
+}
