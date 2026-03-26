@@ -1,12 +1,16 @@
 import dash
 from dash import html
 import dash_bootstrap_components as dbc
+from pages import page1_cb
+
 
 app = dash.Dash(
     __name__,
     use_pages=True,
     external_stylesheets=[dbc.themes.BOOTSTRAP]
 )
+
+page1_cb.register_callbacks(app)
 
 server = app.server
 

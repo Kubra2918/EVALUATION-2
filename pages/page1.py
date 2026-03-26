@@ -7,9 +7,18 @@ dash.register_page(__name__, path="/", name="Page 1")
 
 df = pd.read_csv("datas/avocado.csv")
 
-fig = px.line(df, x="Date", y="AveragePrice", title="Prix moyen des avocats")
+regions = df["region"].unique()
+
+
 
 layout = html.Div([
     html.H1("Page 1- Analyse des prix"),
-    dcc.Graph(figure=fig)
+
+    dcc.Dropdown(
+        id="region-dropdown",
+        options=[{"label": r, "value": r} for r in regions],
+        value=regions[0]
+    ),
+    dcc.Graph(id="price-graph")
+
 ])
