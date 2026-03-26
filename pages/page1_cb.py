@@ -20,6 +20,7 @@ def register_callbacks(app):
             filtered_df,
             x="Date",
             y="AveragePrice",
+            color="type",
             title=f"Prix des avocats - {selected_region}"
         )
 
